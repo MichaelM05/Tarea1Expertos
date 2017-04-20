@@ -1,5 +1,5 @@
 
-function sendInformationStyle(mean,enclosure,gender) {
+function sendInformationStyle(mean, enclosure, gender) {
 
     var parametros = {
         "mean": mean,
@@ -23,9 +23,13 @@ function sendInformationStyle(mean,enclosure,gender) {
 
 }
 function calcularStyle() {
-    
+
     enclosure = document.style.enclosureS.value;
     mean = document.style.meanS.value;
     gender = document.style.genderS.value;
-    sendInformationStyle(mean,enclosure,gender);
+    if (mean.length > 0 && !isNaN(mean)) {
+        sendInformationStyle(mean, enclosure, gender);
+    } else {
+        document.getElementById('responseStyle').innerHTML = "Debe ingresar todos los datos";
+    }
 }

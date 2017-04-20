@@ -13,7 +13,7 @@ function sendInformationTeacher(x1, x2, y1, y2) {
         url: './Analysis/AnalysisDataTeacher.php',
         type: 'post',
         beforeSend: function () {
-            
+
         },
         success: function (response) {
             $("#responseTeacher").html('El tipo de profesor es ' + response);
@@ -21,7 +21,7 @@ function sendInformationTeacher(x1, x2, y1, y2) {
         error: function () {
 
         }
-        
+
     });
 
 }
@@ -32,5 +32,10 @@ function calculateTypeTeacher() {
     x2 = parseInt(document.teacher.evaluationT.value) + parseInt(document.teacher.quantityT.value);
     y1 = parseInt(document.teacher.disciplineT.value) + parseInt(document.teacher.useComputerT.value);
     y2 = parseInt(document.teacher.useTecWeb.value) + parseInt(document.teacher.useSiteWeb.value);
-    sendInformationTeacher(x1, x2, y1, y2);
+    if (document.teacher.ageT.value.length > 0 && !isNaN(document.teacher.ageT.value) &&
+            document.teacher.quantityT.value.length > 0 && !isNaN(document.teacher.quantityT.value) ) {
+        sendInformationTeacher(x1, x2, y1, y2);
+    } else {
+        document.getElementById('responseTeacher').innerHTML = "Debe ingresar todos los datos";
+    }
 }

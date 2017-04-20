@@ -33,12 +33,14 @@
         <script src="JS/SendInformationStyle.js" type="text/javascript"></script>
         <script src="JS/SendInformationTypeTeacher.js" type="text/javascript"></script>
         <script src="JS/SendInformationNetwork.js" type="text/javascript"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
     </head><!--/head-->
 
     <body>
-        <!--.preloader-->
+        <!--        .preloader-->
         <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>
-        <!--/.preloader-->
+        <!--        /.preloader-->
 
         <header id="home">
             <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
@@ -623,11 +625,11 @@
                         <form id="contact-form" name="teacher" method="POST">
                             <div class="row center-block">
                                 <div class="col-md-6">
-                                    <input class="form-control" placeholder="Edad" name="ageT" type="number" />
+                                    <input type="number" class="form-control" data-validation="number" data-validation-allowing="range[1;100]" placeholder="Edad" name="ageT"  />
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" placeholder="Veces que ha dado el curso" 
-                                           name="quantityT" type="number" />
+                                    <input type="number" class="form-control" data-validation="number" data-validation-allowing="range[1;100]" placeholder="Veces que ha dado el curso" 
+                                           name="quantityT"  />
                                 </div>
                             </div>
                             <div class="row center-block">                                        
@@ -761,17 +763,21 @@
                 </div>
             </div>
         </footer>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="JS/jquery.js"></script>
+        <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script type="text/javascript" src="js/jquery.inview.min.js"></script>
-        <script type="text/javascript" src="js/wow.min.js"></script>
-        <script type="text/javascript" src="js/mousescroll.js"></script>
-        <script type="text/javascript" src="js/smoothscroll.js"></script>
-        <script type="text/javascript" src="js/jquery.countTo.js"></script>
-        <script type="text/javascript" src="js/lightbox.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-
+        <script type="text/javascript" src="JS/jquery.inview.min.js"></script>
+        <script type="text/javascript" src="JS/wow.min.js"></script>
+        <script type="text/javascript" src="JS/mousescroll.js"></script>
+        <script type="text/javascript" src="JS/smoothscroll.js"></script>
+        <script type="text/javascript" src="JS/jquery.countTo.js"></script>
+        <script type="text/javascript" src="JS/lightbox.min.js"></script>
+        <script type="text/javascript" src="JS/main.js"></script>
+        <script>
+            $.validate({
+                lang: 'es'
+            });
+        </script>
     </body>
 
 </html>

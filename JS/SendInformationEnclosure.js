@@ -1,5 +1,5 @@
 
-function sendInformationEnclosure(mean,style,gender) {
+function sendInformationEnclosure(mean, style, gender) {
 
     var parametros = {
         "mean": mean,
@@ -22,9 +22,16 @@ function sendInformationEnclosure(mean,style,gender) {
     });
 
 }
+
+
 function calcularEnclosure() {
     style = document.enclosure.styleA.value;
     mean = document.enclosure.mean.value;
     gender = document.enclosure.gender.value;
-    sendInformationEnclosure(mean,style,gender);
+    if (mean.length > 0 && !isNaN(mean)) {
+        sendInformationEnclosure(mean, style, gender);
+    } else {
+        document.getElementById('responseEnclosure').innerHTML = "Debe ingresar todos los datos";
+    }
 }
+

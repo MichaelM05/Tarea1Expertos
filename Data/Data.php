@@ -25,4 +25,11 @@ class Data {
         $this->password = "";
         $this->db = "datatestexpertos";
     }
+        /* constructor */
+//    public function Data(){        
+//        $this->server = "localhost";
+//        $this->user = "id1421239_expertos";
+//        $this->password = "expertos";
+//        $this->db = "id1421239_mmm";
+//    }
 }

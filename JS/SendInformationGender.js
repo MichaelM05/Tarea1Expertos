@@ -1,5 +1,5 @@
 
-function sendInformationGender(mean,style,enclosure) {
+function sendInformationGender(mean, style, enclosure) {
     var parametros = {
         "mean": mean,
         "style": style,
@@ -22,9 +22,13 @@ function sendInformationGender(mean,style,enclosure) {
 
 }
 function calcularGender() {
-    
+
     style = document.gender.styleAG.value;
     mean = document.gender.meanG.value;
     enclosure = document.gender.enclosureG.value;
-    sendInformationGender(mean,style,enclosure);
+    if (mean.length > 0 && !isNaN(mean)) {
+        sendInformationGender(mean, style, enclosure);
+    } else {
+        document.getElementById('responseGender').innerHTML = "Debe ingresar todos los datos";
+    }
 }
